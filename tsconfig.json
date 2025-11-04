@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+
+    // ✅ Make sure custom types are loaded first
+    "typeRoots": ["./types", "./node_modules/@types"],
+
+    // ✅ Path aliases
+    "paths": {
+      "@/*": ["./*"]
+    },
+
+    "plugins": [{ "name": "next" }]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "types",           // ✅ include custom type folder
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", ".next"],
+  "types": ["next-auth"]
+}
